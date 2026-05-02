@@ -38,10 +38,52 @@ async function load() {
         const blog = data.blogs || [];
 
         console.log(blog);
+    
+        displayBlogs(blog);
+        
+        const students = [{name:"AARTHI N",gender:"female",marks:90},
+                         {name:"AASHESH V L", gender:"male", marks: 80},
+                         {name:"ABINAYA J", gender:"female", marks: 80},
+                         {name:"AKASH M", gender:"male", marks: 70},
+                         {name:"ANIRUDESH M", gender:"male", marks: 50}
+                         ];
+        const male = students.filter(stu => stu.gender == "male");
+        const female = students.filter(stu => stu.gender == "female");
+        for(let f of female){
+            console.log(f.name+" "+f.marks);
+        }
+        
+        for(let m of male){
+            console.log(m.name+" "+m.marks);
+        }
+        
+        catgoriesS.onchange = (event) =>{
+            const selected = event.target.value;
+            
+            if(selected == "all"){
+                displayBlogs(blog);
+            }else{
+                const fiteredData = blog.filter(b => b.category === selected);
+                displayBlogs(fiteredData);
+            }
+            
+        };
+        
+        
+        
+       
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+
+ function displayBlogs(blogall){
 
         const container = document.getElementsByClassName("container")[0];
 
-        blog.forEach((element) => {
+        container.innerHTML = "";
+        blogall.forEach((element) => {
             let card = document.createElement("div");
             card.className = "cards";
             card.innerHTML = `<p>${element.id}</p>`;
@@ -84,9 +126,7 @@ async function load() {
             card.innerHTML += `<h1>${element.title}</h1>`;
             container.appendChild(card);
         });
-    } catch (error) {
-        console.error(error.message);
-    }
-}
+        }
+        
 
 load();
