@@ -1,0 +1,30 @@
+*{
+    background-color: black;
+    text-align: center;
+    color:white;
+    margin: 0 px;
+}
+
+.header{
+    background-color: orangered;
+    padding: 40px;
+    border-radius: 0px 0px 30px 30px;
+}
+
+h1{
+    background-color: transparent;
+}
+
+label{
+    background-color: transparent;
+    color: greenyellow;
+    font-size: large;
+    font-weight: 700;
+}
+
+#categories{
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
