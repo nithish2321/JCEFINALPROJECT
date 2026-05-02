@@ -52,3 +52,51 @@ label{
     transform: scale(1.02);
 }
 
+.model-overlay{
+    display: none; 
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.8);
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+.model-content{
+    background-color: white;
+    padding: 30px;
+    color: black;
+    border-radius: 15px;
+    max-width: 600px;
+    position: relative;
+    width: 60%;
+    text-align: left;
+    left: 30%;
+    right: 30%;
+    top:30%;
+    bottom: 30%;
+}
+
+#close-btn{
+    position: absolute;
+    right: 20px;
+    background-color: transparent;
+    color: orangered;
+    cursor: pointer;
+    top: 10px;
+}
+
+#model-title{
+    color:orangered;
+}
+
+#model-content{
+    background-color: transparent;
+    color: black;
+}
+
+
+

@@ -124,9 +124,18 @@ async function load() {
                     break;
             }
             card.innerHTML += `<h1>${element.title}</h1>`;
+            card.onclick = ()=>{
+                document.getElementById("model-title").innerHTML = element.title;
+                document.getElementById("model-content").innerHTML = element.content;
+                document.getElementsByClassName("model-overlay")[0].style.display = "block";
+            };
             container.appendChild(card);
         });
         }
+
+document.getElementById("close-btn").onclick = ()=>{
+    document.getElementsByClassName("model-overlay")[0].style.display = "none";
+};
         
 
 load();
